@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            background-color: #F6F3EB;
+        }
+
+        li {
+            margin-top: 20px;
+            margin-left: 45px;
+            font-size: 25px;
+        }
+
+        video{
+            height:400px; 
+            width:700px;
+            border:1px solid black;
+            margin-top:20px;
+            
+        }
+
+        .number-list{
+            margin-top:0px;
+        }
+
+        .gif-container{
+            border:0px solid black;
+            margin: 0px auto;
+            height:450px;
+            width:750px;
+        }
+
+        #gifs{
+            height:550px;
+            width:700px;
+            margin-bottom:0px;
+            border:0px solid black;
+            
+        }
+
+        #gifsLarger{
+            height:750px;
+            width: 800px;
+        }
+
+        li{
+            margin-top:20px;
+            margin-left:45px;
+            font-size:25px;
+        }
+
+        * {
+            font-family: 'Source Sans Pro';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-pane {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            border: 0px solid black;
+            background-color: lightgoldenrodyellow;
+            height: 100%;
+        }
+
+        .left-pane-heading{
+            padding:8px;
+            font-size:25px;
+        }
+
+            .left-pane a {
+                text-decoration: none;
+                font-size: 20px;
+                padding: 5px;
+                color:black;
+                
+            }
+
+                .left-pane a p {
+                    padding: 3px;
+                    font-weight: 200;
+                }
+
+
+        .right-pane {
+            border: 0px solid black;
+            width: 70%;
+            margin-left: 300px;
+        }
+
+            .right-pane .section1 {
+                height: auto;
+            }
+
+            .right-pane .section2 {
+                height: auto;
+            }
+
+            .right-pane .section3 {
+                height: auto;
+            }
+
+            .right-pane .section4 {
+                height: auto;
+            }
+
+            section h1{
+                font-size:40px;
+            }
+
+            section h2{
+                font-size:30px;
+                margin-top:30px;
+                font-weight:300;
+            }
+
+            section p{
+                margin-top:20px;
+                font-size:25px;
+                letter-spacing:0.2px;
+                line-height:45px;
+            }
+
+
+        #content {
+            border: 1px solid black;
+            width: 420px;
+            margin: 30px auto;
+            position:relative; 
+        }
+
+        p code{
+            padding:15px;
+            font-size:20px;
+            margin-bottom:0px;
+        }
+
+        #section6{
+            position:relative; 
+        }
+
+        .btn{
+            position:absolute; 
+            right:328px;
+            top:50px;
+            padding:3px;
+        }
+
+        .images{
+            border:1px solid black;
+            margin-top:20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-pane">
+            <h3 class="left-pane-heading">Table Of Contents</h3>
+
+            <a href="#section2"><p>Spinning Up Express Server</p></a>
+            <a href="#section3"><p>Install & Require Mongoose</p></a>
+            <a href="#section4"><p>Creating Mongoose Connection </p></a>
+            <a href="#section5"><p>Testing Mongoose Connection</p></a>
+            
+            <a href="#section6"><p>Final Code</p></a>
+        </div>
+
+        <div class="right-pane">
+
+            <section class="section1">
+                <h1>Web Server Basics: Connecting Express Server With Local MongoDB </h1>
+                <p>Now that you know a bit about routing and crud, let’s try connecting the express server to a database. Let’s use the popular MongoDB.</p>
+                
+                <p><b>Note: </b>We’ll be using a locally installed MongoDB here. To understand how to connect to Mongo Atlas (which is a cloud database), read this: [blog]. </p>
+
+                <h2><b>Prerequisite</b></h2>
+                <p>You should have installed MongoDB locally in your system. To know more about how to install Mongo DB, read this: [article].</p>
+                
+
+                
+
+                
+            </section>
+
+
+            <br />
+
+            <section class="section2" id="section2">
+                <h1>
+                    1. Spinning Up Express Server
+                </h1>
+                <p>
+                    Configure express server to run at localhost:3000. That is, install express (after initializing your express project using npm init command) and make it run (or listen to) on port 3000 as shown below
+                </p>
+
+                <video controls autoplay loop>
+                    <source src="videos/1.mp4" type="video/mp4"/>
+                </video>
+
+                <p>
+                    <b>Note:</b> Don’t forget to console.log the ‘server is running @ [port]’ message. It’s quite useful, especially for beginners, to test whether your express server is working fine or not.
+                </p>
+                    
+             </section>
+            <br/>
+            <section class="section3" id="section3">
+                <h1>2. Install & Require Mongoose</h1>
+
+                <p>You need another npm package called  ‘mongoose’ to connect to your Mongo DB. So navigate to your working folder (using cmd) and run the following command: </p>
+
+
+                <video controls autoplay loop>
+                    <source src="videos/2.mp4" type="video/mp4" />
+                </video>
+
+                <h2><b>Why Mongoose? </b></h2>
+                <p>
+                    Mongoose turns the MongoDB database into a bunch of JavaScript objects that can be manipulated easily. Also they are easier to write (and understand) than MongoDB syntax, just like express is easier than NodeJS syntax.
+                </p>
+
+
+                <h2><b>Require Mongoose Into index.js </b></h2>
+                <p>To use any installed npm module, you have to require it first. So require mongoose into your project as follows: </p>
+                <video controls autoplay loop>
+                    <source src="videos/require-mongoose.mp4" type="video/mp4" />
+                </video>
+
+                
+
+
+            </section>
+            <br/>
+
+            <section class="section4" id="section4">
+                <h1>3. Creating Mongoose Connection String</h1>
+
+                <video controls autoplay loop>
+                    <source src="videos/mongoose.mp4" type="video/mp4" />
+                </video>
+
+
+                <p>
+                    Mongoose connection string is basically a URI (Unique Resource Identifier) that helps you connect to the mongo database from your server.
+                </p>
+                <p><b>Note:</b> URI stands for Unique Resource Identifier. With URL(s), the resource is identified using their location on the internet. With URI(s), the resource (often installed over a restricted network) is identified based on ‘I’dentifier string. The identifier is our case being the mongoose connection string.</p>
+
+                <p>Using the mongoose  ‘connect’ method, you can create the connection string as shown in the short video above. </p>
+
+                <h2><b>Components of Mongoose Connection String </b></h2>
+                <ol>
+                    <li><b>Connection Protocol Specification:</b> Just like http protocol helps the server communicate with the world, server has to use mongo protocol when trying to connect with mongoDB. (mongodb://)</li>
+                    <li><b>Unique Resource Identifier (URI):</b> Location of MongoDB (along with its default port number) within your system. (localhost:27017/)</li>
+                    <li><b>Database Name: </b>Unique string identifying your database. (testtesttest).</li>
+                    <li><b>Connection Flags, If Any: </b>These are flags to counter MongoDB updates. They keep changing from time to time. For now, with local MongoDB, its {useNewUrlParser:true}, which should be passed with the connection string.</li>
+                </ol>
+
+                
+            </section>
+
+            <br/>
+            <section class="section5" id="section5">
+                <h1>4. Testing Mongoose Connection </h1>
+                <p>Using mongoose.connection method, we can test whether we have successfully connected to mongo db or not by typing the following code. </p>
+                <video controls autoplay loop>
+                    <source src="videos/testing-mongoose-connection.mp4" type="video/mp4" />
+                </video>
+
+                <ol>
+
+                    <li>As you can realize from the code, we are going to console log message ‘db connected…’ only if the db connection gets established successfully. </li>
+                    <li>That is, the callback function responsible for console logging the message gets trigged only when the mongoose.connection is turned ‘on’ and in  ‘open’ state. </li>
+                    <li>Save index.js and run the file using node index.js command. The message ‘db connected…’ also gets console logged along with the server running message, indicating that you have now successfully connected to your locally installed mongo db. Congrats!</li>
+                    <li>In the next blog, let’s try to understand how you can insert records in your mongo db database from our express server.</li>
+
+                </ol>
+               
+
+
+
+
+            </section>
+            <br/>
+            <section class="section6" id="section6">
+                <h1>5. Final Code</h1>
+             
+                    <button id="btn" class="btn">Click To Copy</button>
+                    <div id="content" contenteditable="true">
+                        <p><code> const express = require('express');</code></p>
+                        <p><code>const app = express(); </code></p>
+
+
+                        <p><code>app.get('/', (req, res) => {</code></p>
+                        <p>
+                            <code style="margin-left:25px;">
+
+                                res.send('If you were a developer @ google, this could be the google home page that you might be developing ;)');
+                            </code>
+                        </p>
+                        <p><code>})</code></p>
+
+
+                        <p><code>app.listen('3000', function () {</code></p>
+                        <p>
+                            <code style="margin-left:25px;">
+
+                                console.log('server is running @ 3000');
+                            </code>
+                        </p>
+
+
+                        <p><code>})</code></p>
+                    </div>
+
+
+            </section>
+
+
+        </div>
+    </div>
+
+    <script>
+        var content = document.querySelector('#content');
+        var btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', copyText);
+
+        function copyText() {
+            let temp = content.innerText;
+            copytoClipBoard(temp);
+
+        }
+
+        function copytoClipBoard(str) {
+            const textarea = document.createElement("textarea");
+            textarea.value = str;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            //output.innerHTML = "<h3>Copied content</h3>" + textarea.value;
+            alert('copied!')//output.innerHTML = "<h3>Copied content</h3>" + textarea.value;
+
+        }
+
+        console.log(content)
+    </script>
+
+
+
+</body>
+</html>

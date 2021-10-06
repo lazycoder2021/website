@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #F6F3EB;
+        }
+
+        video {
+            height: 400px;
+            width: 700px;
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-top: 20px;
+            margin-left: 45px;
+            font-size: 25px;
+        }
+
+        .number-list{
+            margin-top:0px;
+        }
+
+        .gif-container{
+            border:0px solid black;
+            margin: 0px auto;
+            height:450px;
+            width:750px;
+        }
+
+        #gifs{
+            height:550px;
+            width:700px;
+            margin-bottom:0px;
+            border:0px solid black;
+            
+        }
+
+        #gifsLarger{
+            height:750px;
+            width: 800px;
+        }
+
+        
+
+        * {
+            font-family: 'Source Sans Pro';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-pane {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            border: 0px solid black;
+            background-color: lightgoldenrodyellow;
+            height: 100%;
+        }
+
+        .left-pane-heading{
+            padding:8px;
+            font-size:25px;
+        }
+
+            .left-pane a {
+                text-decoration: none;
+                font-size: 20px;
+                padding: 5px;
+                color:black;
+                
+            }
+
+                .left-pane a p {
+                    padding: 3px;
+                    font-weight: 200;
+                }
+
+
+        .right-pane {
+            border: 0px solid black;
+            width: 70%;
+            margin-left: 300px;
+        }
+
+            .right-pane .section1 {
+                height: auto;
+            }
+
+            .right-pane .section2 {
+                height: auto;
+            }
+
+            .right-pane .section3 {
+                height: auto;
+            }
+
+            .right-pane .section4 {
+                height: auto;
+            }
+
+            section h1{
+                font-size:40px;
+            }
+
+            section h2{
+                font-size:30px;
+                margin-top:30px;
+                font-weight:300;
+            }
+
+            section p{
+                margin-top:20px;
+                font-size:25px;
+                letter-spacing:0.2px;
+                line-height:45px;
+            }
+
+
+        #content {
+            border: 1px solid black;
+            width: 420px;
+            margin: 30px auto;
+            position:relative; 
+        }
+
+        p code{
+            padding:15px;
+            font-size:20px;
+            margin-bottom:0px;
+        }
+
+        #section6{
+            position:relative; 
+        }
+
+        .btn{
+            position:absolute; 
+            right:328px;
+            top:50px;
+            padding:3px;
+        }
+
+        .images{
+            border:1px solid black;
+            margin-top:20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-pane">
+            <h3 class="left-pane-heading">Table Of Contents</h3>
+            
+            <a href="#section2"><p>ABC(s) Of Serving A Web Page</p></a>
+                <a href="#section3"><p>Our Server Right Now</p></a>
+                <a href="#section4"><p>Configuring the Request/Response </p></a>
+                <a href="#section5"><p>Making the Request and Getting <br />the Response Back</p></a>
+                <a href="#section6"><p>Final Code</p></a>
+</div>
+
+        <div class="right-pane">
+
+            <section class="section1">
+                <h1>Web Server Basics: How to Serve a Page to Users? </h1>
+                <p>In the previous post, we successfully created a web server that console logs the message server is running @ 3000 when it is run. Now let’s take a look at how we can display (or serve or render) a similar message - this time on the browser screen.</p>
+                
+                <p>Let’s try to display the following message on the browser.</p>
+
+                <img src="images/request-response.jpg" class="images"/>
+
+                
+
+                
+
+                
+            </section>
+
+
+            <br />
+
+            <section class="section2" id="section2">
+                <h1>
+                    ABC(s) Of Serving A Web Page
+                </h1>
+                <p>
+                    In web development terminology, what the user types in the address bar is basically known as the request. What the server returns back is known as the response. For example, user typing in google.com (the request) and google responding with its home page (the response).
+                </p>
+
+                <p>
+                    So basically, when the user makes a request, he or she hits a predefined endpoint (that is, the web address) that has been programmed to respond in a certain way (usually with a web page).
+                </p>
+                <p>
+                    Therefore to display a message as indicated in the image above, we need to configure: </p>
+                <ol>
+                    <li>An endpoint (that is going to serve as the request trigger)</li>
+                    <li>A response (that gets served when the endpoint is accessed) and</li>
+                    <li>A few lines of code (that would be responsible for serving up the response).</li>
+                </ol>
+                
+             </section>
+            <br/><br/>
+                 <section class="section3" id="section3">
+                     <h1>Our Server Right Now</h1>
+
+                     <p>For now, our webserver runs at port 3000 and console logs a message. Let’s see what happens when we try hitting the same endpoint: localhost:3000 on our address bar. After all, that’s where our server is supposed to be running.</p>
+                     <video controls autoplay loop>
+                         <source src="videos/videos10.mp4" type="video/mp4" />
+                     </video>
+
+
+                     <p>
+                         You’ll see a Cannot GET / message being displayed. Why is this happening when we know for sure that our server is running fine? It’s because we have not yet configured it to display something on the screen.
+                     </p>
+
+                     <p>
+                         In other words, we have not yet configured our server to respond to the request. It only runs in the backend, console logging a message.
+                     </p>
+
+
+                 </section>
+            <br/>
+
+            <section class="section4" id="section4">
+                <h1>Configuring the Request/Response</h1>
+                <video controls autoplay loop>
+                    <source src="videos/videosX.mp4" type="video/mp4" />
+                </video>
+                <ol>
+                    <li>
+                        Now let’s ensure our simple server responds with a message when the endpoint is being hit. How do we do this? By making use of the get() function (which express derives from node.js) and chaining it to our app variable (that currently represents our server) as follows: <code>app.get('')</code>
+                    </li>
+
+
+                    <li><code>get('')</code>function takes in two arguments: i) the route that is going to serve as the endpoint and ii) the callback function responsible for serving up the response.</li>
+
+                    <p style="margin-left:250px;"><code>app.get('/', function (req, res) => {</code></p>
+
+                    <p style="margin-left:250px;"><code>})</code></p>
+
+
+                    <li>
+                        / indicates home route (or the default route). That is, localhost:3000. And the callback function (to be triggered when the route is hit) takes in two arguments: req and res, which represent the request and response respectively.
+
+                    </li>
+
+                    <li>After typing this code, try restarting the server through command line interface using the <b>node index.js </b>command.</li>
+                </ol>
+                <video controls autoplay loop>
+                    <source src="videos/videos12.mp4" type="video/mp4" />
+                </video>
+                <ol>
+                <li>You get the same error as before. But if you look closely, you’ll realize that our server is trying to load something (indicating by the loader in the window) but is unable to do so. This is because we haven’t yet configured the message to be displayed in the browser (but our server is ready to serve).</li>
+
+
+                <li>Let's do that now.</li>
+
+                <li>We have to insert something between { } of the app.get() function to display a message. This something is the res (response) object being chained to its send() method to send the message (response) to the user via the browser screen. The code should be as follows:</li>
+                <p>
+                    <code style="font-size:22px;margin-left:10px;">
+
+                        res.send('If you were a developer @ google, this could be the google home page that you might be developing ;)');
+                    </code>
+                        </p>
+                
+                <li><b>Note:</b> Anything written in res.send() gets displayed as the response on the browser screen when the corresponding endpoint is hit.</>
+</ol>
+
+            </section>
+
+            <br/>
+            <section class="section5" id="section5">
+                <h1>Making the Request and Getting the Response Back</h1>
+                <video controls autoplay loop>
+                    <source src="videos/videos13.mp4" type="video/mp4" />
+                </video>
+                <p>Now save the file and restart the server by typing node index.js in the command line interface.</p>
+                <p>Then try accessing the endpoint: localhost:3000 using the address bar.</p>
+                <p>You’ll notice that the message we configured gets displayed now! </p><p>That means our server is now serving a message at the / route.</p>
+
+
+
+
+
+
+
+
+            </section>
+            <br/>
+            <section class="section6" id="section6">
+                <h1>5. Final Code</h1>
+             
+                    <button id="btn" class="btn">Click To Copy</button>
+                    <div id="content" contenteditable="true">
+                        <p><code> const express = require('express');</code></p>
+                        <p><code>const app = express(); </code></p>
+
+
+                        <p><code>app.get('/', (req, res) => {</code></p>
+                        <p>
+                            <code style="margin-left:25px;">
+
+                                res.send('If you were a developer @ google, this could be the google home page that you might be developing ;)');
+                            </code>
+                        </p>
+                        <p><code>})</code></p>
+
+
+                        <p><code>app.listen('3000', function () {</code></p>
+                        <p>
+                            <code style="margin-left:25px;">
+
+                                console.log('server is running @ 3000');
+                            </code>
+                        </p>
+
+
+                        <p><code>})</code></p>
+                    </div>
+
+
+            </section>
+
+
+        </div>
+    </div>
+
+    <script>
+        var content = document.querySelector('#content');
+        var btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', copyText);
+
+        function copyText() {
+            let temp = content.innerText;
+            copytoClipBoard(temp);
+
+        }
+
+        function copytoClipBoard(str) {
+            const textarea = document.createElement("textarea");
+            textarea.value = str;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            //output.innerHTML = "<h3>Copied content</h3>" + textarea.value;
+            alert('copied!')//output.innerHTML = "<h3>Copied content</h3>" + textarea.value;
+
+        }
+
+        console.log(content)
+    </script>
+
+
+
+</body>
+</html>

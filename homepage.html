@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro';
+            background-color: #F6F3EB; 
+        }
+
+        .navbar-container {
+            padding: 20px;
+            border: 0px solid black;
+            height: 40px;
+            width: 100%;
+            margin-bottom:10px;
+        }
+
+        .navbar {
+            display: flex;
+            font-size:18px;
+            font-weight:700;
+        }
+
+            .navbar p {
+                margin-right: 20px;
+                text-transform:uppercase; 
+            }
+
+        .container{
+            width:1000px;
+            margin:0px auto; 
+            border:0px solid black;
+        }
+
+        .banner{
+            border:0px solid black;
+            display:flex; 
+            flex-direction:column;
+            text-align:center;
+            margin:10px;
+            padding:20px;
+        }
+
+        .banner .heading{
+            margin:5px;
+        }
+
+            .banner .heading h1 {
+                font-size: 45px;
+                color: #1F3B34;
+            }
+
+            .banner .subheading p {
+                font-size: 30px;
+                color: #1F3B34;
+            }
+
+        .main-blog {
+            display: flex;
+            width: 98%;
+            margin: 35px 10px;
+            padding: 5px;
+            border: 2px solid black;
+            height: 250px;
+            box-shadow: 5px 10px;
+        }
+
+        .left-pane{
+            width:50%;
+            padding:5px;
+        }
+
+        .left-pane img{
+            width:100%;
+            object-fit:cover;
+            height:230px;
+            border-radius:4px;
+        }
+
+        .right-pane{
+            padding:5px;
+            width:50%; 
+        }
+
+            .right-pane h2 {
+                font-size: 35px;
+                margin-bottom: 5px;
+                color: #1F3B34;
+            }
+
+            .right-pane p {
+                font-size: 20px;
+                line-height: 30px;
+                color: #1F3B34;
+                word-spacing:1px;
+            }
+
+            .blogs-section{
+                flex-wrap:wrap;
+                display:flex;
+            }
+
+            .blogs-section .blog{
+                display:flex; 
+                flex-direction:column;
+                border:1px solid black;
+                margin:10px;
+                padding:5px;
+                width:31.32%; 
+                height:320px;
+            }
+
+        span {
+            background-color: #FFE0D6; 
+            padding:5px;
+            width:90px;
+        }
+
+            .blog img{
+                width:100%;
+                object-fit:cover;
+                height:85%;
+            }
+
+            .blog h2{
+                font-size:22px;
+                text-align:left;
+                margin-top:10px;
+
+            }
+
+            .blog:hover{
+                background-color:white; 
+            }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar-container">
+            <nav class="navbar">
+                <p>JavaScript</p>
+                <p>Express</p>
+                <p>Mongoose</p>
+                <p>About Webguru</p>
+            </nav>
+        </div>
+        <div class="banner">
+            <div class="heading">
+                <h1>One Stop Solution for Web Development</h1>
+            </div>
+            <div class="subheading">
+                <p>Webguru is a free online resource for coding enthusiasts</p>
+            </div>
+        </div>
+
+        <div class="main-blog">
+            <div class="left-pane">
+                <img src="mongo.jpeg" />
+            </div>
+            <div class="right-pane">
+                <h2>Latest Blog</h2>
+                <p>What’s the best type of CRM? Proprietary and open source CRM both have their pros and cons. Here’s what you need to know, plus the 8 best options. What’s the best type of CRM? Proprietary and open source CRM both have their pros and cons. Here’s what you need to know, plus the 8 best options.</p>
+                
+            </div>
+        </div>
+
+        <div class="blogs-section">
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="javascript.webp" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2><a href="blogOne.html">Web Server Basics: How to Create a Simple Server?</a></h2>
+                </div>
+            </div>
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="javascript.webp" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2><a href="blogTwo.html">Web Server Basics: How to Server a Page to Users?</a></h2>
+                </div>
+            </div>
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="javascript.webp" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2><a href="blogThree.html">Web Server Basics: Connectiong Express Server With MongoDB</a></h2>
+                </div>
+            </div>
+
+
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="mongo.jpeg" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2><a href="blogThree.html">Web Server Basics: Pushing Data from Express Server to MongoDB</a></h2>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="mongo.jpeg" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2>Web Server Basics: Routing and CRUD Operations</h2>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="mongo.jpeg" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2>Blog Header</h2>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="mongo.jpeg" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2>Blog Header</h2>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="mongo.jpeg" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2>Blog Header</h2>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="mongo.jpeg" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2>Blog Header</h2>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="javascript.webp" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2>Blog Header</h2>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="javascript.webp" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2>Blog Header</h2>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="blog-image">
+                    <image src="javascript.webp" />
+                </div>
+                <span>JavaScript</span>
+                <div class="blog-header">
+                    <h2>Blog Header</h2>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>

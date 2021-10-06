@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #F6F3EB;
+        }
+
+        li {
+            margin-top: 20px;
+            margin-left: 45px;
+            font-size: 25px;
+        }
+
+        video {
+            height: 400px;
+            width: 700px;
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+
+        .number-list{
+            margin-top:0px;
+        }
+
+        .gif-container{
+            border:0px solid black;
+            margin: 0px auto;
+            height:450px;
+            width:750px;
+        }
+
+        #gifs{
+            height:550px;
+            width:700px;
+            margin-bottom:0px;
+            border:0px solid black;
+            
+        }
+
+        
+
+        * {
+            font-family: 'Source Sans Pro';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-pane {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            border-right: 1px solid black;
+            background-color: lightgoldenrodyellow;
+            height: 100%;
+        }
+
+        .left-pane-heading{
+            padding:8px;
+            font-size:25px;
+        }
+
+            .left-pane a {
+                text-decoration: none;
+                font-size: 20px;
+                padding: 5px;
+                color:black;
+                
+            }
+
+                .left-pane a p {
+                    padding: 3px;
+                    font-weight: 200;
+                }
+
+
+        .right-pane {
+            border: 0px solid black;
+            width: 70%;
+            margin-left: 300px;
+        }
+
+            .right-pane .section1 {
+                height: auto;
+            }
+
+            .right-pane .section2 {
+                height: auto;
+            }
+
+            .right-pane .section3 {
+                height: auto;
+            }
+
+            .right-pane .section4 {
+                height: auto;
+            }
+
+            section h1{
+                font-size:40px;
+            }
+
+            section h2{
+                font-size:30px;
+                margin-top:30px;
+                font-weight:300;
+            }
+
+            section p{
+                margin-top:20px;
+                font-size:25px;
+                letter-spacing:0.2px;
+                line-height:45px;
+            }
+
+
+        #content {
+            border: 1px solid black;
+            width: 420px;
+            margin: 30px auto;
+            position:relative; 
+        }
+
+        p code{
+            padding:15px;
+            font-size:20px;
+            margin-bottom:0px;
+        }
+
+        #section6{
+            position:relative; 
+        }
+
+        .btn{
+            position:absolute; 
+            right:328px;
+            top:50px;
+            padding:3px;
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-pane">
+            <h3 class="left-pane-heading">Table Of Contents</h3>
+            <a href="#section1"><p>Prerequisites</p></a>
+            <a href="#section2"><p>Express Server Framework</p></a>
+            <a href="#section3"><p>Create Your Working Folder</p></a>
+            <a href="#section4"><p>Install Express</p></a>
+            <a href="#section5"><p>Creating A Simple Express Server</p></a>
+            <a href="#section6"><p>Running Your Express Server</p></a>
+            <a href="#section7"><p>Final Code</p></a>
+        </div>
+
+        <div class="right-pane">
+
+            <section class="section1">
+                <h1>Web Server Basics: How to Create a Simple Web Server? </h1>
+                <p>Web server is just another computer responsible for hosting web apps and serving them on our browsers on a request/response basis.</p>
+                <p>In this blog, let’s create a simple web server using express ( a server framework built on top of node.js).</p>
+
+                <h2 id="section1"><b>Prerequisites</b></h2>
+                <p>To be able to use express, you should have installed node.js and npm package in your system. (For further details on installation, you can refer to the these articles: <a href="#">How to Install Node.js and Npm Package?</a></p>
+
+                <h2><b>But First, What Is Node.js and NPM Package?</b></h2>
+                <p>
+                    Node.js helps you build the web server environment. Whereas NPM package helps you decide the dependencies (packages or modules) your webserver needs to function. For example, there’s a package that enables the webserver to send mails to users, there’s a package that enables the webserver to authenticate your users etc.</p>
+
+             </section>
+
+
+            <br />
+
+            <section class="section2" id="section2">
+                <h1>
+                    Express - The Server Framework For Node.js
+                </h1>
+                <p>
+                    It’s time to install express now that you know a bit about node and npm package (and probably have installed them on your system). Express makes it easy to create a Node.js server using fewer lines of code. (You will understand this if you <a href="#">study the differences between a simple node.js server and a express server</a>).
+                </p>
+             </section>
+            <br/>
+            <section class="section3" id="section3">
+                <h1>Create Your Working Folder</h1>
+                <video controls autoplay loop>
+                    <source src="videos/npminit.mp4" type="video/mp4" />
+                </video>
+
+                <ol>
+                    <li>Create a folder somewhere on your system. This is going to host our server files. Name it ‘web_server’ or something like that. Access the folder using command line interface (CMD) as shown in the clip.</li>
+                    <li>To know what is a command line interface and how they can be used, read this article: [CMD].</li>
+                    <li>Once into the working folder, type in the following command: <code style="font-size:28px;">npm init -y</code></li>
+                    <li>
+                        You will get a bunch of code as a response. This is nothing but the basic details about the app you are going to create like version number, its description, the default page to be served to the users (also known as entry point), author and more.
+                    </li>
+                    <p>
+                        <b>Note: </b>Usually command npm init is enough to get our project up and running, but you have to manually type out each and every detail. So for the time being we have automated the task by typing in an additional -y, which simply means yes to all the questions.
+
+                    </p>
+
+
+
+                    <p><b>Note: </b>Now go into your working folder and you’ll notice that there is a file called package.json. If you open it up, you’ll notice that it will contain the same details that were displayed in the console. The purpose of this file, apart from serving as a document indicating ownership, is to help other developers collaborate and extend your web app.</p>
+
+                    <p>Now that the preliminaries have been completed, it’s time to install express.</p>
+
+                </ol>
+
+                  </section>
+            <br/>
+
+            <section class="section4" id="section4">
+                <h1>Installing Express</h1>
+                <video controls autoplay loop>
+                    <source src="videos/installexpress.mp4" type="video/mp4" />
+                </video>
+                <ol>
+                    <li>Express is also an NPM package and you can install it on your working folder by running the following command in your cmd: <code style="font-size:28px;">npm install express (or) npm i express</code></li>
+                    <li>
+                        Now go back to your package.json file and you’ll see that there will be a new entry called dependencies and it will contain express along with the version you just installed. So as you include various modules (NPM packages) to your server, they get added to the package.json file.
+                    </li>
+                </ol>
+                <p><b>Note:</b> This is how package.json helps other developers collaborate with your web app and extend it, by letting them know what packages are needed to get your web app up and running.</p>
+
+            </section>
+
+            <br/>
+            <section class="section5" id="section5">
+                <h1>Creating a Simple Web Server Using Express</h1>
+                <p>Finally, it’s time to create our web server. Using a code editor like visual studio, create a .js file called index.js (the default entry point created previously as we ran the npm init command) and save it in your working folder.</p>
+                <p>Then, do the following:</p>
+                <video controls autoplay loop>
+                    <source src="videos/simpleserver.mp4" type="video/mp4" />
+                </video>
+                <ol>
+                    <li>You have to require express in your server file. (It’s not enough to just install it). You can do this by typing the following:<code style="font-size:28px;">const express = require('express');</code></li>
+                    <li>As you can see, we save the required express module using a const variable express. (Of course, you can name the variable whatever you want, but that would be going against the established convention).</li>
+                    <li>Then we pass on all the properties and functionalities of express to another variable called app (which will serve as our server), by typing the following line: <code style="font-size:28px;">const app = express();</code></li>
+                    <li><b>Note:</b> to be precise, express functionalities are being passed as an object to app, so that it can use it without directly having to call express variable each time.</li>
+                    <li>Now it’s time to run our app on some port number in your system. This can be done by using the following line: <code style="font-size:28px;">app.listen(3000, …);</code></li>
+
+                    <li>Basically what this means is that we are making our app to listen to port 3000 (or in other words, run on port 3000). And the ‘… is where the callback function is supposed to go. (To know more about callback functions, read this article: <callback functions>).</li>
+
+                    <li>For now, we will write a simple callback function that console logs server is running @ port 3000. To do this, replace the … with the following code:</li>
+
+                </ol>
+                <p><b>Note:</b> Don't forget to save your file.</p>
+                <br/>
+                <h1 id="section6">Running Your Express Server</h1>
+                <ol>
+                    <li>It’s time to run your webserver. You can do this by going into the working folder via the command line interface, and typing the following command:<code style="font-size:28px;">node index.js</code></>
+                    <li>You’ll notice the message we just created gets console logged.</li>
+                </ol>
+                <video controls autoplay loop>
+                    <source src="videos/runserver.mp4" type="video/mp4" />
+                </video>
+
+                <p>There you go! You just created a simple web server using express! Though it does not do nothing at the moment, everything is in place and it runs as it is supposed to. That’s something! In the next post, let’s extend on this server and make it do something - like displaying a message on your browser. Till then, keep learning, keep growing!</p>
+            </section>
+            <br/>
+            <section class="section6" id="section6">
+                <h1 id="section7">5. Final Code</h1>
+             
+                    <button id="btn" class="btn">Click To Copy</button>
+                <div id="content" contenteditable="true">
+                    <p><code> const express = require('express');</code></p>
+                    <p><code>const app = express(); </code></p>
+
+                    
+                    <p><code>app.listen('3000', function () {</code></p>
+                    <p>
+                        <code style="margin-left:25px;">
+
+                            console.log('server is running @ 3000'); 
+                        </code>
+                    </p>
+
+                    
+                    <p><code>})</code></p>
+                </div>
+
+
+            </section>
+
+
+        </div>
+    </div>
+
+    <script>
+        var content = document.querySelector('#content');
+        var btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', copyText);
+
+        function copyText() {
+            let temp = content.innerText;
+            copytoClipBoard(temp);
+
+        }
+
+        function copytoClipBoard(str) {
+            const textarea = document.createElement("textarea");
+            textarea.value = str;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            //output.innerHTML = "<h3>Copied content</h3>" + textarea.value;
+            alert('copied!')//output.innerHTML = "<h3>Copied content</h3>" + textarea.value;
+
+        }
+
+        console.log(content)
+    </script>
+
+
+
+</body>
+</html>
